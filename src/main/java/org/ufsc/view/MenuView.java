@@ -2,6 +2,9 @@ package org.ufsc.view;
 
 import org.ufsc.util.MenuInput;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MenuView {
 
     public static Integer ShowMenu() {
@@ -9,13 +12,20 @@ public class MenuView {
         System.out.println("2 - Cadatrar");
         System.out.println("0 - Encerrar");
 
-        return MenuInput.input();
+        return MenuInput.intInput();
     }
 
-    public static void ShowLogin() {
+    public static Map<String, String> ShowLogin() {
         System.out.println("Insira suas informações");
-        System.out.print("Nome de usuário: ");
+        System.out.print("\nNome de usuário: ");
+        String username = MenuInput.stringInput();
         System.out.print("\nSenha: ");
+        String password = MenuInput.passwordInput();
 
+        Map<String, String> loginData = new HashMap<>();
+        loginData.put("username", username);
+        loginData.put("password", password);
+
+        return loginData;
     }
 }
