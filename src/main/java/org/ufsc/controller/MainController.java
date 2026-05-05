@@ -1,5 +1,7 @@
 package org.ufsc.controller;
 
+import org.ufsc.util.MenuInput;
+
 public class MainController {
     private LoginController loginController;
 

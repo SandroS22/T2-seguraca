@@ -5,20 +5,17 @@ import java.util.Scanner;
 
 public class MenuInput {
 
-    public static int intInput(){
-        System.out.print("Selecione uma das opcoes acima: ");
-        Scanner scanner = new Scanner(System.in);
-        scanner.close();
+    private static final Scanner scan = new Scanner(System.in);
 
-        return scanner.nextInt();
+    public static int intInput(){
+        scan.reset();
+        System.out.print("Selecione uma das opcoes acima: ");
+        return scan.nextInt();
     }
 
     public static String stringInput() {
-        System.out.print("Inserir informação: ");
-        Scanner scanner = new Scanner(System.in);
-        scanner.close();
-
-        return scanner.nextLine();
+        scan.reset();
+        return scan.next();
     }
 
     public static String passwordInput() {
@@ -28,6 +25,10 @@ public class MenuInput {
             System.exit(1);
         }
 
-        return new String(console.readPassword("Insira sua senha: "));
+        return new String(console.readPassword());
+    }
+
+    public static void clean() {
+        scan.close();
     }
 }

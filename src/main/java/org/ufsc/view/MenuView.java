@@ -16,8 +16,10 @@ public class MenuView {
     }
 
     public static Map<String, String> ShowLogin() {
-        System.out.println("Insira suas informações");
-        System.out.print("\nNome de usuário: ");
+        System.out.println("=======================");
+        System.out.println("||     LOGIN         ||");
+        System.out.println("=======================");
+        System.out.print("Nome de usuário: ");
         String username = MenuInput.stringInput();
         System.out.print("\nSenha: ");
         String password = MenuInput.passwordInput();

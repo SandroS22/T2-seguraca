@@ -11,6 +11,7 @@ public class Main {
             int menuChoice = MenuView.ShowMenu();
             if(menuChoice == 0) {
                 System.out.println("Encerrando...");
+                MenuInput.clean();
                 System.exit(0);
             }
             MainController mainController = new MainController();
