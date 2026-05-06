@@ -1,27 +1,25 @@
-# Estágio 1: Build
-FROM maven:3.8.6-eclipse-temurin-17 AS build
+# Estágio 1: Build (JDK 21)
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# Copia apenas o pom.xml para baixar as dependências (otimiza o cache do Docker)
+# Copia o pom.xml para cache de dependências
 COPY pom.xml .
 RUN mvn dependency:go-offline
 
-# Copia o código fonte e gera o pacote
+# Copia o código e compila
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Estágio 2: Runtime
+# Estágio 2: Runtime (JRE 21)
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
-# Copia o jar gerado no estágio anterior
-COPY --from=build /app/target/*.jar trabalho-2-1.0-SNAPSHOT.jar.jar
+COPY --from=build /app/target/*.jar app.jar
 
-# Define variáveis de ambiente padrão (podem ser subscritas pelo Compose)
-ENV DB_URL=jdbc:postgresql://db:5432/users
+ENV DB_URL=jdbc:postgresql://db:5432/meu_banco
 ENV DB_USER=postgres
 ENV DB_PASSWORD=password
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "trabalho-2-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-cp", "app.jar", "org.ufsc.Main"]

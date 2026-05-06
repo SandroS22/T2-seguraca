@@ -12,4 +12,18 @@ public class MainController {
     public void mainMenu() {
         this.loginController.Login();
     }
+
+    public void handleMenuChoice(int choice) {
+        switch (choice) {
+            case 1:
+                loginController.Login();
+                break;
+            case 2:
+                loginController.Register();
+                break;
+            default:
+                System.out.println("Opção inválida!");
+                break;
+        }
+    }
 }
