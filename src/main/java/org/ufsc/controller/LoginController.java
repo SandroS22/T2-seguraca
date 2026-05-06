@@ -34,6 +34,8 @@ public class LoginController {
 
         if (CryptoService.verifyTOTP(user.getTotpSecret(), totpCode)) {
             System.out.println("Login realizado com sucesso!");
+            BlockchainController blockchainController = new BlockchainController(user);
+            blockchainController.showUserMenu();
         } else {
             System.out.println("Código TOTP inválido.");
         }
@@ -52,7 +54,7 @@ public class LoginController {
         // 2. Salvar no banco
         UserRepository repo = new UserRepository();
         repo.saveUser(username, hash, salt, totpSecret);
-        
+
         System.out.println("\n*** ATENÇÃO: Configure seu TOTP ***");
         System.out.println("Sua chave secreta: " + totpSecret);
         System.out.println("************************************\n");

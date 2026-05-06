@@ -1,13 +1,19 @@
 package org.ufsc.service;
 
 import org.bouncycastle.crypto.digests.SHA1Digest;
+import org.bouncycastle.crypto.engines.AESEngine;
 import org.bouncycastle.crypto.generators.PKCS5S2ParametersGenerator;
 import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.crypto.macs.HMac;
+import org.bouncycastle.crypto.modes.GCMBlockCipher;
+import org.bouncycastle.crypto.params.AEADParameters;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.util.encoders.Base32;
 
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 public class CryptoService {
@@ -15,7 +21,9 @@ public class CryptoService {
     private static final int ITERATIONS = 10000;
     private static final int KEY_LENGTH = 256;
 
-    // Gera um Salt aleatório para o PBKDF2
+    private static final int GCM_TAG_LENGTH = 128;
+    private static final int IV_LENGTH = 12;
+
     public static byte[] generateSalt() {
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
@@ -57,7 +65,6 @@ public class CryptoService {
         byte[] hash = new byte[hmac.getMacSize()];
         hmac.doFinal(hash, 0);
 
-        // Dynamic Truncation (conforme RFC 6238)
         int offset = hash[hash.length - 1] & 0xf;
         int binary = ((hash[offset] & 0x7f) << 24) |
                 ((hash[offset + 1] & 0xff) << 16) |
@@ -66,5 +73,50 @@ public class CryptoService {
 
         int otp = binary % 1000000;
         return String.format("%06d", otp);
+    }
+
+    public static byte[] generateIV() {
+        SecureRandom random = new SecureRandom();
+        byte[] iv = new byte[IV_LENGTH];
+        random.nextBytes(iv);
+        return iv;
+    }
+
+    public static byte[] encrypt(byte[] data, byte[] key, byte[] iv) throws Exception {
+        GCMBlockCipher cipher = new GCMBlockCipher(new AESEngine());
+        AEADParameters parameters = new AEADParameters(new KeyParameter(key), GCM_TAG_LENGTH, iv);
+        cipher.init(true, parameters);
+
+        byte[] out = new byte[cipher.getOutputSize(data.length)];
+        int len = cipher.processBytes(data, 0, data.length, out, 0);
+        cipher.doFinal(out, len);
+        return out;
+    }
+
+    public static byte[] decrypt(byte[] cipherText, byte[] key, byte[] iv) throws Exception {
+        GCMBlockCipher cipher = new GCMBlockCipher(new AESEngine());
+        AEADParameters parameters = new AEADParameters(new KeyParameter(key), GCM_TAG_LENGTH, iv);
+        cipher.init(false, parameters);
+
+        byte[] out = new byte[cipher.getOutputSize(cipherText.length)];
+        int len = cipher.processBytes(cipherText, 0, cipherText.length, out, 0);
+        cipher.doFinal(out, len);
+        return out;
+    }
+
+    public static String calculateHash(String input) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(input.getBytes(StandardCharsets.UTF_8));
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
