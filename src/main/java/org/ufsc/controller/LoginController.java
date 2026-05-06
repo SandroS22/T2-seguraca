@@ -1,7 +1,9 @@
 package org.ufsc.controller;
 
+import org.ufsc.model.User;
 import org.ufsc.repository.UserRepository;
 import org.ufsc.service.CryptoService;
+import org.ufsc.util.MenuInput;
 import org.ufsc.view.MenuView;
 
 import java.util.Map;
@@ -9,8 +11,32 @@ import java.util.Map;
 public class LoginController {
 
     public void Login() {
-        Map<String, String> loginData = MenuView.showLogin();
-        System.out.println(loginData);
+        Map<String, String> data = MenuView.showLogin();
+        String username = data.get("username");
+        String passwordAttempt = data.get("password");
+
+        UserRepository repo = new UserRepository();
+        User user = repo.getUserByUsername(username);
+
+        if (user == null) {
+            System.out.println("Usuário não encontrado.");
+            return;
+        }
+
+        byte[] attemptHash = CryptoService.hashPassword(passwordAttempt.toCharArray(), user.getSalt());
+        if (!java.util.Arrays.equals(attemptHash, user.getPasswordHash())) {
+            System.out.println("Senha incorreta.");
+            return;
+        }
+
+        System.out.print("Digite o código TOTP (6 dígitos): ");
+        String totpCode = MenuInput.stringInput();
+
+        if (CryptoService.verifyTOTP(user.getTotpSecret(), totpCode)) {
+            System.out.println("Login realizado com sucesso!");
+        } else {
+            System.out.println("Código TOTP inválido.");
+        }
     }
 
     public void Register() {
@@ -26,8 +52,7 @@ public class LoginController {
         // 2. Salvar no banco
         UserRepository repo = new UserRepository();
         repo.saveUser(username, hash, salt, totpSecret);
-
-        // 3. Exibir a Secret para o usuário configurar o App (Google Authenticator)[cite: 1]
+        
         System.out.println("\n*** ATENÇÃO: Configure seu TOTP ***");
         System.out.println("Sua chave secreta: " + totpSecret);
         System.out.println("************************************\n");

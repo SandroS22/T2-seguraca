@@ -1,6 +1,7 @@
 package org.ufsc.repository;
 
 import org.ufsc.model.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -21,5 +22,25 @@ public class UserRepository {
         } catch (SQLException e) {
             System.err.println("Erro ao salvar usuário: " + e.getMessage());
         }
+    }
+
+    public User getUserByUsername(String username) {
+        String sql = "SELECT * FROM users WHERE username = ?";
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, username);
+            var rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return new User(
+                        rs.getString("username"),
+                        rs.getBytes("password_hash"),
+                        rs.getBytes("salt"),
+                        rs.getString("totp_secret")
+                );
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao buscar usuário: " + e.getMessage());
+        }
+        return null;
     }
 }
