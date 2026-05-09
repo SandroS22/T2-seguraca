@@ -1,0 +1,267 @@
+[2026-05-09 15:01:22] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: logtester
+[2026-05-09 15:01:22] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: logtester - Erro: Senha incorreta.
+[2026-05-09 15:01:22] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: logtester
+[2026-05-09 15:01:22] [SECURITY] [logtester   ] - Login Completo (MFA) realizado com sucesso para: logtester
+[2026-05-09 15:01:23] [INFO    ] [logtester   ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:01:23] [INFO    ] [logtester   ] - Auditoria concluida: Sistema integro.
+[2026-05-09 15:01:23] [INFO    ] [logtester   ] - Sessao encerrada (Logout).
+[2026-05-09 15:06:32] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: tester
+[2026-05-09 15:06:32] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:06:32] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:06:32] [INFO    ] [tester      ] - Sessao encerrada (Logout).
+[2026-05-09 15:06:32] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: ghost - Erro: Usuario nao encontrado: ghost
+[2026-05-09 15:06:32] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: tester - Erro: Senha incorreta.
+[2026-05-09 15:06:32] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:06:32] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: tester
+[2026-05-09 15:06:32] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:06:32] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:06:32] [INFO    ] [tester      ] - Novo usuario registrado: bob
+[2026-05-09 15:06:32] [INFO    ] [tester      ] - Login Passo 1 (Senha) OK para: bob
+[2026-05-09 15:06:32] [SECURITY] [tester      ] - Falha no TOTP para o usuario: bob
+[2026-05-09 15:08:50] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: tester
+[2026-05-09 15:08:50] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:08:50] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:08:50] [INFO    ] [tester      ] - Sessao encerrada (Logout).
+[2026-05-09 15:08:50] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: ghost - Erro: Usuario nao encontrado: ghost
+[2026-05-09 15:08:50] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: tester - Erro: Senha incorreta.
+[2026-05-09 15:08:50] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:08:50] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: tester
+[2026-05-09 15:08:50] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:08:50] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:08:50] [INFO    ] [tester      ] - Novo usuario registrado: bob
+[2026-05-09 15:09:33] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: tester
+[2026-05-09 15:09:33] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:09:33] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:09:34] [INFO    ] [tester      ] - Sessao encerrada (Logout).
+[2026-05-09 15:09:34] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: ghost - Erro: Usuario nao encontrado: ghost
+[2026-05-09 15:09:34] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: tester - Erro: Senha incorreta.
+[2026-05-09 15:09:34] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:09:34] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: tester
+[2026-05-09 15:09:34] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:09:34] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:09:34] [INFO    ] [tester      ] - Novo usuario registrado: bob
+[2026-05-09 15:11:56] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: tester
+[2026-05-09 15:11:56] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:11:56] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:11:56] [INFO    ] [tester      ] - Sessao encerrada (Logout).
+[2026-05-09 15:11:56] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: ghost - Erro: Usuario nao encontrado: ghost
+[2026-05-09 15:11:56] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: tester - Erro: Senha incorreta.
+[2026-05-09 15:11:56] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:11:56] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: tester
+[2026-05-09 15:11:56] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: tester
+[2026-05-09 15:11:56] [SECURITY] [tester      ] - Login Completo (MFA) realizado com sucesso para: tester
+[2026-05-09 15:11:56] [INFO    ] [tester      ] - Novo usuario registrado: bob
+[2026-05-09 15:16:58] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:16:58] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:16:58] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:16:58] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:16:58] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:16:58] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:18:25] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:18:26] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:18:26] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:18:26] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:18:26] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:18:26] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:19:46] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:19:46] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:19:46] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:19:46] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:19:46] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:19:46] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:21] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:20:22] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:20:22] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:22] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:22] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:22] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:59] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:20:59] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:20:59] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:59] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:20:59] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:20:59] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:21:37] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:21:37] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:21:37] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:21:37] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:21:37] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:21:37] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:22:09] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:22:09] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:22:09] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:22:09] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:22:09] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:22:09] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:22:10] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:22:10] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:22:10] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:22:10] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:23:29] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: admin
+[2026-05-09 15:23:30] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: admin
+[2026-05-09 15:23:30] [SECURITY] [admin       ] - Login Completo (MFA) realizado com sucesso para: admin
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:23:30] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #2 foi violado.
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:23:30] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE CONTINUIDADE: Bloco 1 ausente ou fora de ordem.
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo usuario registrado: admin
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 0
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 1
+[2026-05-09 15:23:30] [INFO    ] [admin       ] - Novo bloco registrado. Indice: 2
+[2026-05-09 15:23:30] [SECURITY] [admin       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-09 15:29:00] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: finaluser
+[2026-05-09 15:29:00] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: finaluser - Erro: Senha incorreta.
+[2026-05-09 15:29:00] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: finaluser
+[2026-05-09 15:29:00] [SECURITY] [finaluser   ] - Login Completo (MFA) realizado com sucesso para: finaluser
+[2026-05-09 15:29:00] [INFO    ] [finaluser   ] - Novo bloco registrado. Indice: 3
+[2026-05-09 15:29:00] [INFO    ] [finaluser   ] - Novo bloco registrado. Indice: 4
+[2026-05-09 15:29:00] [SECURITY] [finaluser   ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-09 15:29:00] [INFO    ] [finaluser   ] - Sessao encerrada (Logout).
+[2026-05-09 15:43:46] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: luizfernando
+[2026-05-09 15:50:37] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: lulu
+[2026-05-09 15:51:37] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: lulus
+[2026-05-09 15:53:21] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: lulu - Erro: Senha incorreta.
+[2026-05-09 15:57:51] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: gato
+[2026-05-09 15:59:30] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: gato
+[2026-05-09 15:59:43] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: gato
+[2026-05-09 15:59:54] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: gato
+[2026-05-09 15:59:59] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: gato
