@@ -1,7 +1,4 @@
-/**
- * Encapsula a resposta de qualquer operação realizada no "Servidor".
- * Garante que apenas dados necessários retornem para o Cliente (CLI).
- */
+
 public class ServerResponse {
     private final boolean success;
     private final String message;

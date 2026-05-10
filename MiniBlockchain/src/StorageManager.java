@@ -8,10 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * Gerenciador de Armazenamento para o MiniBlockchain.
- * Responsável por persistir usuários e blocos em arquivos JSON.
- */
+
 public class StorageManager {
 
     private static final String DATA_DIR = "MiniBlockchain/data";
@@ -27,20 +24,16 @@ public class StorageManager {
         }
     }
 
-    // --- Operações de Usuário ---
+    
 
-    /**
-     * Salva os dados cifrados do usuário (UserStorage).
-     */
+    
     public static void saveUserStorage(String username, UserStorage storage) throws IOException {
         String json = JsonUtils.mapToJson(storage.toMap());
         Path path = Paths.get(USERS_DIR, "user_" + username + ".json");
         Files.write(path, json.getBytes());
     }
 
-    /**
-     * Carrega os dados cifrados do usuário (UserStorage).
-     */
+    
     public static UserStorage loadUserStorage(String username) throws IOException {
         Path path = Paths.get(USERS_DIR, "user_" + username + ".json");
         if (!Files.exists(path)) return null;
@@ -52,11 +45,11 @@ public class StorageManager {
         return Files.exists(Paths.get(USERS_DIR, "user_" + username + ".json"));
     }
 
-    // --- Operações de Blockchain ---
+    
 
     public static void saveBlock(Block block) throws IOException {
         String json = JsonUtils.mapToJson(block.toMap());
-        // Nome do arquivo baseado no indice para manter a ordem
+        
         String filename = String.format("block_%05d.json", Integer.parseInt(block.getIndex()));
         Path path = Paths.get(BLOCKCHAIN_DIR, filename);
         Files.write(path, json.getBytes());

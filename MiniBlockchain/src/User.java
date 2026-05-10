@@ -1,15 +1,13 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Modelo para representar um usuário do sistema.
- */
+
 public class User {
     private String username;
-    private String salt; // Hex
-    private String passwordHash; // Hex
-    private String totpSecretEnc; // Hex (cifrado)
-    private String totpIV; // Hex (IV para o segredo TOTP)
+    private String salt; 
+    private String passwordHash; 
+    private String totpSecretEnc; 
+    private String totpIV; 
 
     public User() {}
 
@@ -21,7 +19,7 @@ public class User {
         this.totpIV = totpIV;
     }
 
-    // Getters e Setters
+    
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
     public String getSalt() { return salt; }
@@ -33,9 +31,7 @@ public class User {
     public String getTotpIV() { return totpIV; }
     public void setTotpIV(String totpIV) { this.totpIV = totpIV; }
 
-    /**
-     * Converte o objeto para um Map para serialização JSON.
-     */
+    
     public Map<String, String> toMap() {
         Map<String, String> map = new HashMap<>();
         map.put("username", username);
@@ -46,9 +42,7 @@ public class User {
         return map;
     }
 
-    /**
-     * Cria um objeto User a partir de um Map (deserialização).
-     */
+    
     public static User fromMap(Map<String, String> map) {
         return new User(
             map.get("username"),

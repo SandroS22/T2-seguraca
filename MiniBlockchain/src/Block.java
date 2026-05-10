@@ -1,19 +1,17 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Modelo para representar um bloco na blockchain.
- */
+
 public class Block {
     private String index;
     private String timestamp;
-    private String dataEnc; // Hex
-    private String iv; // Hex
-    private String hashPrev; // Hex
+    private String dataEnc; 
+    private String iv; 
+    private String hashPrev; 
     private String owner;
-    private String hash; // Hex (Hash deste bloco)
+    private String hash; 
 
-    // Campo temporário para processamento (não persistido)
+    
     private String dataRaw; 
 
     public Block() {}
@@ -28,7 +26,7 @@ public class Block {
         this.hash = hash;
     }
 
-    // Getters e Setters
+    
     public String getIndex() { return index; }
     public void setIndex(String index) { this.index = index; }
     public String getTimestamp() { return timestamp; }
@@ -47,10 +45,7 @@ public class Block {
     public String getDataRaw() { return dataRaw; }
     public void setDataRaw(String dataRaw) { this.dataRaw = dataRaw; }
 
-    /**
-     * Retorna a representação em bytes do bloco para cálculo de hash.
-     * Concatena Index + Timestamp + DataEnc + IV + HashPrev + Owner.
-     */
+    
     public byte[] getBytesForHash() {
         return BlockchainUtils.concatenate(
             BlockchainUtils.strToBytes(index),
@@ -62,9 +57,7 @@ public class Block {
         );
     }
 
-    /**
-     * Converte o objeto para um Map para serialização JSON.
-     */
+    
     public Map<String, String> toMap() {
         Map<String, String> map = new HashMap<>();
         map.put("index", index);
@@ -77,9 +70,7 @@ public class Block {
         return map;
     }
 
-    /**
-     * Cria um objeto Block a partir de um Map (deserialização).
-     */
+    
     public static Block fromMap(Map<String, String> map) {
         return new Block(
             map.get("index"),

@@ -8,25 +8,25 @@ public class LoginStep1Test {
             String user = "logintester";
             String pass = "p@ssword-123";
 
-            // 1. Garantir que o usuário existe (Cadastro)
+            
             System.out.println("Garantindo cadastro do usuario...");
             if (!StorageManager.userExists(user)) {
                 AuthService.register(user, pass);
                 System.out.println("Usuario cadastrado com sucesso.");
             }
 
-            // 2. Teste de Autenticação com Senha Correta
+            
             System.out.println("\nTentando login com SENHA CORRETA...");
             User authenticatedUser = AuthService.authenticateStep1(user, pass);
             System.out.println("[SUCESSO] Login aceito para: " + authenticatedUser.getUsername());
             
-            // Simular o início da sessão (Passo 2)
+            
             byte[] salt = BlockchainUtils.fromHex(StorageManager.loadUserStorage(user).getSalt());
             SecretKey sessionKey = SecurityUtils.deriveKey(pass, salt);
             SessionContext.setSession(authenticatedUser, sessionKey);
             System.out.println("Sessao iniciada. Chave de sessao em memoria: " + (SessionContext.isLoggedIn() ? "SIM" : "NAO"));
 
-            // 3. Teste de Autenticação com Senha INCORRETA
+            
             System.out.println("\nTentando login com SENHA INCORRETA...");
             try {
                 AuthService.authenticateStep1(user, "senha-errada");
@@ -35,7 +35,7 @@ public class LoginStep1Test {
                 System.out.println("[SUCESSO] Sistema rejeitou senha errada: " + e.getMessage());
             }
 
-            // 4. Teste com Usuário Inexistente
+            
             System.out.println("\nTentando login com USUARIO INEXISTENTE...");
             try {
                 AuthService.authenticateStep1("nao-existo", "qualquer-senha");

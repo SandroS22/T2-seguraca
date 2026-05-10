@@ -6,10 +6,10 @@ public class FipsCheck {
     public static void main(String[] args) {
         System.out.println("--- Verificando Provedor Bouncy Castle FIPS ---");
         
-        // Registrar o provedor
+        
         Security.addProvider(new BouncyCastleFipsProvider());
         
-        // Verificar disponibilidade
+        
         Provider provider = Security.getProvider("BCFIPS");
         
         if (provider != null) {
@@ -17,7 +17,7 @@ public class FipsCheck {
             System.out.println("Informacoes do Provedor: " + provider.getInfo());
             System.out.println("Versao: " + provider.getVersionStr());
             
-            // Verificar se o modo FIPS está ativo
+            
             boolean isFipsMode = org.bouncycastle.crypto.CryptoServicesRegistrar.isInApprovedOnlyMode();
             System.out.println("Modo FIPS (Approved Only): " + isFipsMode);
         } else {

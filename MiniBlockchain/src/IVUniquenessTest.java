@@ -1,9 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Teste de estresse para validar a unicidade estatística dos IVs gerados.
- */
+
 public class IVUniquenessTest {
     public static void main(String[] args) {
         try {

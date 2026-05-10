@@ -1,6 +1,4 @@
-/**
- * Configuração global de depuração para o sistema.
- */
+
 public class DebugConfig {
     public static boolean isEnabled = false;
 

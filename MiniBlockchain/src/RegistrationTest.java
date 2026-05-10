@@ -5,7 +5,7 @@ public class RegistrationTest {
         try {
             System.out.println("--- Teste de Cadastro (Atividade 2.1.1 - Re-validado com 1.2.1) ---");
 
-            // 1. Teste com Credenciais Válidas
+            
             String user = "bob123";
             String pass = "bob-strong-pass";
 
@@ -21,7 +21,7 @@ public class RegistrationTest {
                 }
             }
 
-            // 2. Teste com Username Inválido (Símbolos)
+            
             System.out.println("\nTestando Cadastro INVALIDO (Username com simbolo): 'user_!@#'");
             try {
                 AuthService.register("user_!@#", "senha-valida-123");
@@ -30,7 +30,7 @@ public class RegistrationTest {
                 System.out.println("[SUCESSO] Rejeitou username invalido: " + e.getMessage());
             }
 
-            // 3. Teste com Senha Curta
+            
             System.out.println("\nTestando Cadastro INVALIDO (Senha curta): '123'");
             try {
                 AuthService.register("alice99", "123");

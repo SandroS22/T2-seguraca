@@ -1,15 +1,12 @@
 import java.util.Scanner;
 import java.util.List;
 
-/**
- * Ponto de entrada da aplicação MiniBlockchain (Cliente CLI).
- * Atua como o "Cliente" que interage com o "Servidor" via Fachada.
- */
+
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Verificar flag de debug
+        
         for (String arg : args) {
             if (arg.equalsIgnoreCase("--debug")) {
                 DebugConfig.isEnabled = true;
@@ -61,9 +58,8 @@ public class Main {
         System.out.println("\n--- MENU BLOCKCHAIN (Autenticado: " + SessionContext.getCurrentUser().getUsername() + ") ---");
         System.out.println("1. Adicionar Novo Bloco");
         System.out.println("2. Listar Blockchain (Ver Histórico)");
-        System.out.println("3. Realizar Auditoria de Integridade");
-        System.out.println("4. Realizar Logout");
-        System.out.println("5. Sair da Aplicação");
+        System.out.println("3. Realizar Logout");
+        System.out.println("4. Sair da Aplicação");
         System.out.print("Escolha uma opção: ");
 
         String choice = scanner.nextLine();
@@ -75,13 +71,10 @@ public class Main {
                 handleListBlockchain();
                 break;
             case "3":
-                handleAudit();
-                break;
-            case "4":
                 MiniBlockchainServer.logout();
                 System.out.println("[OK] Logout realizado com sucesso.");
                 break;
-            case "5":
+            case "4":
                 System.out.println("Encerrando aplicação...");
                 System.exit(0);
             default:
@@ -156,7 +149,7 @@ public class Main {
                 return;
             }
 
-            // Cabeçalho da Tabela
+            
             String header = String.format("| %-3s | %-19s | %-12s | %-30s | %-12s |", 
                                           "ID", "DATA/HORA", "DONO", "CONTEUDO", "HASH (RES)");
             String divider = "+-----+---------------------+--------------+--------------------------------+--------------+";

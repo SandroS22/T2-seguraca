@@ -4,18 +4,16 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Teste de Validação da Decifragem Seletiva e Privacidade Multiusuário.
- */
+
 public class SelectiveDecryptionTest {
     public static void main(String[] args) {
         try {
             System.out.println("--- Teste de Decifragem Seletiva (Atividade 4.2.2) ---");
 
-            // 1. Limpar ambiente
+            
             cleanup();
 
-            // 2. Setup Alice (Cria Bloco 0 e 1)
+            
             System.out.println("\n[SESSAO] Alice registra seus blocos...");
             String aliceTotp = (String) MiniBlockchainServer.register("alice", "alice-pass-123").getData();
             login("alice", "alice-pass-123", aliceTotp);
@@ -23,27 +21,27 @@ public class SelectiveDecryptionTest {
             MiniBlockchainServer.addBlock("Conteudo Privado Alice #1");
             MiniBlockchainServer.logout();
 
-            // 3. Setup Bob (Cria Bloco 2)
+            
             System.out.println("\n[SESSAO] Bob registra seu bloco...");
             String bobTotp = (String) MiniBlockchainServer.register("bob", "bob-pass-456").getData();
             login("bob", "bob-pass-456", bobTotp);
             MiniBlockchainServer.addBlock("Conteudo Privado Bob #2");
             MiniBlockchainServer.logout();
 
-            // 4. Cenário A: Alice visualiza a chain
+            
             System.out.println("\n[Cenario A] Alice logada visualizando a chain:");
             login("alice", "alice-pass-123", aliceTotp);
             ServerResponse aliceView = MiniBlockchainServer.getBlockchain();
             printChainView((List<Block>) aliceView.getData());
             MiniBlockchainServer.logout();
 
-            // 5. Cenário B: Bob visualiza a chain
+            
             System.out.println("\n[Cenario B] Bob logado visualizando a chain:");
             login("bob", "bob-pass-456", bobTotp);
             ServerResponse bobView = MiniBlockchainServer.getBlockchain();
             printChainView((List<Block>) bobView.getData());
             
-            // 6. Cenário C: Detecção de Adulteração na Listagem
+            
             System.out.println("\n[Cenario C] Adulterando Bloco #2 (de Bob) e visualizando como Bob...");
             tamperBlock(2);
             ServerResponse bobViewCorrupted = MiniBlockchainServer.getBlockchain();

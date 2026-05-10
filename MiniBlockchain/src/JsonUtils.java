@@ -1,16 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Utilitário minimalista para manipular strings JSON (chave=valor).
- * Criado manualmente para evitar o uso de bibliotecas externas (Jackson/Gson).
- * Suporta apenas objetos planos (sem aninhamento).
- */
+
 public class JsonUtils {
 
-    /**
-     * Converte um Map em uma string JSON simples.
-     */
+    
     public static String mapToJson(Map<String, String> map) {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");
@@ -27,13 +21,10 @@ public class JsonUtils {
         return sb.toString();
     }
 
-    /**
-     * Converte uma string JSON simples em um Map.
-     * Nota: Este parser é básico e espera o formato exato gerado pelo mapToJson.
-     */
+    
     public static Map<String, String> jsonToMap(String json) {
         Map<String, String> map = new HashMap<>();
-        // Remove chaves e quebras de linha
+        
         String clean = json.replace("{", "").replace("}", "").trim();
         if (clean.isEmpty()) return map;
 

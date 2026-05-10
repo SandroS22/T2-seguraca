@@ -1,9 +1,7 @@
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-/**
- * Teste de Validação do Ciclo de Vida da Sessão e Chaves Temporárias.
- */
+
 public class SessionLifecycleTest {
     public static void main(String[] args) {
         try {
@@ -12,19 +10,19 @@ public class SessionLifecycleTest {
             String user = "sessiontester" + System.currentTimeMillis();
             String pass = "session-pass-999";
 
-            // 1. Preparação (Cadastro e Login)
+            
             ServerResponse regRes = MiniBlockchainServer.register(user, pass);
             String totpSecretHex = (String) regRes.getData();
             SecretKey totpKey = new SecretKeySpec(BlockchainUtils.fromHex(totpSecretHex), "HmacSHA256");
 
-            // 2. Login Completo
+            
             MiniBlockchainServer.loginStep1(user, pass);
             String code = TotpService.calculateTOTP(totpKey, TotpService.getCurrentTimeStep());
             MiniBlockchainServer.loginStep2(code);
 
             System.out.println("Status Inicial: Autenticado = " + MiniBlockchainServer.isAuthenticated());
             
-            // 3. Testar Operação com Sessão Ativa
+            
             System.out.println("\nTentando adicionar bloco COM sessao ativa...");
             ServerResponse addRes1 = MiniBlockchainServer.addBlock("Dados de Teste");
             System.out.println("Resultado: " + addRes1.getMessage());
@@ -32,12 +30,12 @@ public class SessionLifecycleTest {
                 System.out.println("[OK] Operacao permitida com sessao ativa.");
             }
 
-            // 4. Executar Logout (Secure Wipe)
+            
             System.out.println("\nExecutando LOGOUT...");
             MiniBlockchainServer.logout();
             System.out.println("Status Apos Logout: Autenticado = " + MiniBlockchainServer.isAuthenticated());
 
-            // 5. Testar Operação SEM Sessão
+            
             System.out.println("\nTentando adicionar bloco SEM sessao ativa...");
             ServerResponse addRes2 = MiniBlockchainServer.addBlock("Dados de Teste");
             System.out.println("Resultado: " + addRes2.getMessage());
@@ -45,7 +43,7 @@ public class SessionLifecycleTest {
                 System.out.println("[OK] Operacao bloqueada corretamente apos logout.");
             }
 
-            // 6. Verificar se o contexto foi limpo
+            
             if (SessionContext.getCurrentUser() == null && SessionContext.getSessionKey() == null) {
                 System.out.println("[OK] SessionContext esta totalmente limpo (Secure Wipe).");
             }

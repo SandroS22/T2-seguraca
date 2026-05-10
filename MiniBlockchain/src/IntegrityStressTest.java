@@ -6,10 +6,7 @@ import java.util.Map;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.List;
 
-/**
- * Suite de Testes de Estresse de Integridade (Red Teaming).
- * Simula 5 vetores de ataque para validar as camadas de defesa.
- */
+
 public class IntegrityStressTest {
     public static void main(String[] args) {
         try {
@@ -18,42 +15,42 @@ public class IntegrityStressTest {
             String user = "admin";
             String pass = "admin-strong-pass-123";
 
-            // --- ATAQUE 1: Adulteração de Payload (GCM Test) ---
+            
             setupHealthyChain(user, pass, 3);
             System.out.print("[Ataque 1] Modificar 1 bit do dado cifrado: ");
             tamperField(1, "dataEnc");
             ServerResponse res1 = MiniBlockchainServer.getBlockchain();
             validateSelectiveFailure(res1, 1, "[ERRO DE INTEGRIDADE]");
 
-            // --- ATAQUE 2: Adulteração de IV (GCM Test) ---
+            
             setupHealthyChain(user, pass, 3);
             System.out.print("[Ataque 2] Modificar o IV do bloco: ");
             tamperField(2, "iv");
             ServerResponse res2 = MiniBlockchainServer.getBlockchain();
             validateSelectiveFailure(res2, 2, "[ERRO DE INTEGRIDADE]");
 
-            // --- ATAQUE 3: Quebra de Vínculo (HashPrev Test) ---
+            
             setupHealthyChain(user, pass, 3);
             System.out.print("[Ataque 3] Modificar o HashPrev (Ponteiro): ");
             tamperField(2, "hashPrev");
             ServerResponse res3 = MiniBlockchainServer.audit();
             assertFail(res3, "FALHA DE ENCADEAMENTO");
 
-            // --- ATAQUE 4: Reordenação (Index Test) ---
+            
             setupHealthyChain(user, pass, 3);
             System.out.print("[Ataque 4] Trocar indice do bloco 1 para 99: ");
             tamperField(1, "index", "99");
             ServerResponse res4 = MiniBlockchainServer.audit();
             assertFail(res4, "FALHA DE CONTINUIDADE");
 
-            // --- ATAQUE 5: Crime Perfeito (Recalculo de Hash) ---
+            
             setupHealthyChain(user, pass, 3);
             System.out.print("[Ataque 5] Alterar dado + Recalcular Hash (Bypass Camada 1): ");
             tamperAndRecalculate(1);
             ServerResponse res5 = MiniBlockchainServer.getBlockchain();
             validateSelectiveFailure(res5, 1, "ERRO DE INTEGRIDADE");
 
-            // --- ATAQUE 6: Blindagem Gênese (Atividade 5.2.2 Passo 3) ---
+            
             setupHealthyChain(user, pass, 3);
             System.out.print("[Ataque 6] Adulterar o vinculo do Bloco Gênese (#0): ");
             tamperField(0, "hashPrev", "falso-vinculo-123");
@@ -102,11 +99,11 @@ public class IntegrityStressTest {
         String json = new String(Files.readAllBytes(path));
         Map<String, String> map = JsonUtils.jsonToMap(json);
         
-        // 1. Modifica o dado
+        
         String data = map.get("dataEnc");
         map.put("dataEnc", (data.charAt(0) == '0' ? 'a' : '0') + data.substring(1));
         
-        // 2. Recalcula o Hash para fingir integridade estrutural
+        
         Block b = Block.fromMap(map);
         map.put("hash", BlockchainService.calculateBlockHash(b));
         
@@ -125,7 +122,7 @@ public class IntegrityStressTest {
 
         if (target != null) {
             String content = target.getDataRaw();
-            // Normalizar para comparação de substring
+            
             if (content != null && content.toUpperCase().contains("ERRO DE INTEGRIDADE")) {
                 System.out.println("PASS (Sistema detectou a falha no bloco #" + expectedIndex + ")");
             } else {

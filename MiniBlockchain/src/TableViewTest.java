@@ -3,28 +3,26 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.File;
 import java.util.List;
 
-/**
- * Teste de Validação Visual da Tabela Blockchain.
- */
+
 public class TableViewTest {
     public static void main(String[] args) {
         try {
             System.out.println("--- Teste de Visualizacao Tabular (Atividade 5.1.2) ---");
 
-            // 1. Setup Ambiente Limpo
+            
             cleanup();
 
-            // 2. Setup Alice (Login)
+            
             String totp = (String) MiniBlockchainServer.register("alice", "alice-pass-123").getData();
             MiniBlockchainServer.loginStep1("alice", "alice-pass-123");
             MiniBlockchainServer.loginStep2(TotpService.calculateTOTP(new SecretKeySpec(BlockchainUtils.fromHex(totp), "HmacSHA256"), TotpService.getCurrentTimeStep()));
 
-            // 3. Adicionar Blocos Diversos
+            
             System.out.println("\n[SETUP] Adicionando blocos para teste de layout...");
             MiniBlockchainServer.addBlock("Pequeno");
             MiniBlockchainServer.addBlock("Este eh um conteudo propositalmente longo para testar o truncamento de texto na tabela da cli");
             
-            // 4. Bob adiciona um bloco (para testar exibição de terceiros)
+            
             MiniBlockchainServer.logout();
             String totpBob = (String) MiniBlockchainServer.register("bob", "bob-pass-456").getData();
             MiniBlockchainServer.loginStep1("bob", "bob-pass-456");
@@ -32,13 +30,13 @@ public class TableViewTest {
             MiniBlockchainServer.addBlock("Bloco do Bob");
             MiniBlockchainServer.logout();
 
-            // 5. Alice volta e lista (Chamando o método privado de Main via reflexão ou apenas simulando o loop)
+            
             System.out.println("\n[TESTE] Visualizacao final como Alice:");
             MiniBlockchainServer.loginStep1("alice", "alice-pass-123");
             MiniBlockchainServer.loginStep2(TotpService.calculateTOTP(new SecretKeySpec(BlockchainUtils.fromHex(totp), "HmacSHA256"), TotpService.getCurrentTimeStep()));
 
-            // Como handleListBlockchain é privado em Main, vamos rodar o Main real ou simular a saída aqui
-            // Para validação, invocaremos a lógica de Main
+            
+            
             System.out.println("\n--- SAÍDA RENDERIZADA ---");
             simulateMainListBlockchain();
 

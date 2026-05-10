@@ -6,18 +6,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
-/**
- * Teste de Validação da Auditoria Completa da Blockchain.
- */
+
 public class FullChainAuditTest {
     public static void main(String[] args) {
         try {
             System.out.println("--- Teste de Auditoria Completa (Atividade 4.2.3) ---");
 
-            // 1. Setup Ambiente Limpo
+            
             cleanup();
 
-            // 2. Criar uma chain de 5 blocos
+            
             System.out.println("\n[SETUP] Criando uma cadeia de 5 blocos...");
             String totp = (String) MiniBlockchainServer.register("admin", "admin-pass-123").getData();
             login("admin", "admin-pass-123", totp);
@@ -26,7 +24,7 @@ public class FullChainAuditTest {
                 MiniBlockchainServer.addBlock("Dados do Bloco #" + i);
             }
 
-            // 3. Cenário A: Auditoria em Cadeia Saudável
+            
             System.out.println("\n[Cenario A] Executando auditoria na cadeia integra...");
             ServerResponse resA = MiniBlockchainServer.audit();
             System.out.println("Resultado: " + resA.getMessage());
@@ -34,7 +32,7 @@ public class FullChainAuditTest {
                 System.out.println("[OK] Auditoria validou a cadeia saudavel.");
             }
 
-            // 4. Cenário B: Deleção de Bloco (Furo na Cadeia)
+            
             System.out.println("\n[Cenario B] Deletando o Bloco #2 do disco...");
             Files.delete(Paths.get("MiniBlockchain/data/blockchain/block_00002.json"));
             
@@ -44,8 +42,8 @@ public class FullChainAuditTest {
                 System.out.println("[OK] Auditoria detectou a deleção do bloco.");
             }
 
-            // 5. Cenário C: Alteração de Hash (Quebra de Selo)
-            cleanup(); // Reset para novo teste
+            
+            cleanup(); 
             totp = (String) MiniBlockchainServer.register("admin2", "admin-pass-123").getData();
             login("admin2", "admin-pass-123", totp);
             MiniBlockchainServer.addBlock("Bloco Original");
@@ -54,7 +52,7 @@ public class FullChainAuditTest {
             Path path = Paths.get("MiniBlockchain/data/blockchain/block_00000.json");
             String json = new String(Files.readAllBytes(path));
             Map<String, String> map = JsonUtils.jsonToMap(json);
-            map.put("hash", "falso-hash-123"); // Modifica o selo
+            map.put("hash", "falso-hash-123"); 
             Files.write(path, JsonUtils.mapToJson(map).getBytes());
 
             ServerResponse resC = MiniBlockchainServer.audit();

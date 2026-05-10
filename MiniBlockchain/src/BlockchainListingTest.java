@@ -3,15 +3,13 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.File;
 import java.util.List;
 
-/**
- * Teste de Validação da Listagem Completa da Blockchain (Multi-usuário).
- */
+
 public class BlockchainListingTest {
     public static void main(String[] args) {
         try {
             System.out.println("--- Teste de Listagem de Blockchain (Atividade 4.2.1) ---");
 
-            // 1. Limpar ambiente
+            
             File chainDir = new File("MiniBlockchain/data/blockchain");
             if (chainDir.exists()) {
                 for (File file : chainDir.listFiles()) file.delete();
@@ -21,7 +19,7 @@ public class BlockchainListingTest {
                 for (File file : userDir.listFiles()) file.delete();
             }
 
-            // 2. Setup Usuário 1 (Alice)
+            
             System.out.println("\n[SESSAO] Alice entra no sistema...");
             ServerResponse aliceReg = MiniBlockchainServer.register("alice", "alice-pass-123");
             String aliceTotp = (String) aliceReg.getData();
@@ -34,7 +32,7 @@ public class BlockchainListingTest {
             MiniBlockchainServer.addBlock("Bloco 1 de Alice");
             MiniBlockchainServer.logout();
 
-            // 3. Setup Usuário 2 (Bob)
+            
             System.out.println("\n[SESSAO] Bob entra no sistema...");
             ServerResponse bobReg = MiniBlockchainServer.register("bob", "bob-pass-456");
             String bobTotp = (String) bobReg.getData();
@@ -46,7 +44,7 @@ public class BlockchainListingTest {
             MiniBlockchainServer.addBlock("Bloco 2 de Bob");
             MiniBlockchainServer.logout();
 
-            // 4. Testar Listagem como um Usuário Autenticado (Alice volta)
+            
             System.out.println("\n[SESSAO] Alice retorna para visualizar a rede...");
             MiniBlockchainServer.loginStep1("alice", "alice-pass-123");
             MiniBlockchainServer.loginStep2(TotpService.calculateTOTP(new SecretKeySpec(BlockchainUtils.fromHex(aliceTotp), "HmacSHA256"), TotpService.getCurrentTimeStep()));
@@ -56,7 +54,7 @@ public class BlockchainListingTest {
 
             System.out.println("Total de blocos recuperados: " + history.size());
 
-            // 5. Validar Visibilidade e Ordem
+            
             boolean allOk = true;
             for (int i = 0; i < history.size(); i++) {
                 Block b = history.get(i);

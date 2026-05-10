@@ -1,26 +1,24 @@
 import javax.crypto.SecretKey;
 import java.io.File;
 
-/**
- * Teste de Validação da Coleta de Dados e Timestamping.
- */
+
 public class DataCollectionTest {
     public static void main(String[] args) {
         try {
             System.out.println("--- Teste de Coleta e Metadados (Atividade 4.1.1) ---");
 
-            // 1. Limpar ambiente
+            
             File chainDir = new File("MiniBlockchain/data/blockchain");
             if (chainDir.exists()) {
                 for (File file : chainDir.listFiles()) file.delete();
             }
 
-            // 2. Simular Login
+            
             User alice = new User("alice", "salt", "hash", "totp", "N/A");
             SecretKey sessionKey = SecurityUtils.deriveKey("senha-alice", BlockchainUtils.strToBytes("salt123"));
             SessionContext.setSession(alice, sessionKey);
 
-            // 3. Testar Preparação do Bloco 0 (Gênese)
+            
             System.out.println("\n[PASSO 1] Preparando Bloco Gênese...");
             Block b0 = BlockchainService.prepareNewBlock("Transação Gênese");
             
@@ -33,8 +31,8 @@ public class DataCollectionTest {
                 System.out.println("[OK] Metadados iniciais corretos.");
             }
 
-            // 4. Testar Sequenciamento (Simulando que b0 foi salvo)
-            // Para o teste, precisamos que o StorageManager encontre o bloco anterior no disco
+            
+            
             b0.setDataEnc("dummy"); b0.setIv("dummy"); b0.setHash("dummy-hash");
             StorageManager.saveBlock(b0);
 
@@ -48,7 +46,7 @@ public class DataCollectionTest {
                 System.out.println("[OK] Sequenciamento e vinculação inicial validados.");
             }
 
-            // 5. Testar Segurança (Sem Sessão)
+            
             System.out.println("\n[PASSO 3] Testando bloqueio sem sessao...");
             SessionContext.clear();
             try {

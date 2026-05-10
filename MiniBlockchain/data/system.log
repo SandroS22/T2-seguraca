@@ -265,3 +265,60 @@
 [2026-05-09 15:59:43] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: gato
 [2026-05-09 15:59:54] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: gato
 [2026-05-09 15:59:59] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: gato
+[2026-05-10 12:36:37] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: luiz1
+[2026-05-10 12:37:31] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: luiz1
+[2026-05-10 12:37:52] [SECURITY] [luiz1       ] - Login Completo (MFA) realizado com sucesso para: luiz1
+[2026-05-10 12:39:05] [INFO    ] [luiz1       ] - Novo bloco registrado. Indice: 5
+[2026-05-10 12:39:20] [SECURITY] [luiz1       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 12:39:39] [INFO    ] [luiz1       ] - Sessao encerrada (Logout).
+[2026-05-10 12:40:18] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: luiz2
+[2026-05-10 12:41:03] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: luiz1 - Erro: Senha incorreta.
+[2026-05-10 12:41:17] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: luiz1
+[2026-05-10 12:41:42] [SECURITY] [luiz1       ] - Login Completo (MFA) realizado com sucesso para: luiz1
+[2026-05-10 12:41:46] [INFO    ] [luiz1       ] - Sessao encerrada (Logout).
+[2026-05-10 12:41:52] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: luiz1
+[2026-05-10 12:41:56] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: luiz1
+[2026-05-10 12:42:10] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: luiz2
+[2026-05-10 12:42:18] [SECURITY] [luiz2       ] - Login Completo (MFA) realizado com sucesso para: luiz2
+[2026-05-10 12:42:48] [INFO    ] [luiz2       ] - Novo bloco registrado. Indice: 6
+[2026-05-10 12:42:59] [INFO    ] [luiz2       ] - Sessao encerrada (Logout).
+[2026-05-10 12:43:07] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: luiz1
+[2026-05-10 12:43:15] [SECURITY] [luiz1       ] - Login Completo (MFA) realizado com sucesso para: luiz1
+[2026-05-10 12:43:37] [SECURITY] [luiz1       ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 17:08:01] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: sandro
+[2026-05-10 17:08:33] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro
+[2026-05-10 17:08:43] [SECURITY] [sandro      ] - Login Completo (MFA) realizado com sucesso para: sandro
+[2026-05-10 17:08:58] [WARN    ] [ANONYMOUS   ] - Falha de autenticacao (Senha) para: sandro - Erro: Senha incorreta.
+[2026-05-10 17:09:07] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro
+[2026-05-10 17:09:15] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: sandro
+[2026-05-10 17:10:14] [INFO    ] [sandro      ] - Novo bloco registrado. Indice: 7
+[2026-05-10 17:11:55] [INFO    ] [ANONYMOUS   ] - Novo usuario registrado: sandro2
+[2026-05-10 17:12:18] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro
+[2026-05-10 17:12:22] [SECURITY] [sandro      ] - Login Completo (MFA) realizado com sucesso para: sandro
+[2026-05-10 17:13:25] [INFO    ] [sandro      ] - Sessao encerrada (Logout).
+[2026-05-10 17:14:17] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro2
+[2026-05-10 17:14:25] [SECURITY] [sandro2     ] - Login Completo (MFA) realizado com sucesso para: sandro2
+[2026-05-10 17:14:38] [INFO    ] [sandro2     ] - Sessao encerrada (Logout).
+[2026-05-10 17:14:46] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro2
+[2026-05-10 17:14:52] [SECURITY] [ANONYMOUS   ] - Falha no TOTP para o usuario: sandro2
+[2026-05-10 17:15:19] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro2
+[2026-05-10 17:15:37] [SECURITY] [sandro2     ] - Login Completo (MFA) realizado com sucesso para: sandro2
+[2026-05-10 17:16:01] [INFO    ] [sandro2     ] - Novo bloco registrado. Indice: 8
+[2026-05-10 17:16:22] [INFO    ] [sandro      ] - Novo bloco registrado. Indice: 9
+[2026-05-10 17:16:28] [INFO    ] [sandro      ] - Sessao encerrada (Logout).
+[2026-05-10 17:16:34] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro
+[2026-05-10 17:16:43] [SECURITY] [sandro      ] - Login Completo (MFA) realizado com sucesso para: sandro
+[2026-05-10 17:29:08] [SECURITY] [sandro      ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 17:43:29] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro
+[2026-05-10 17:43:42] [SECURITY] [sandro      ] - Login Completo (MFA) realizado com sucesso para: sandro
+[2026-05-10 17:43:59] [SECURITY] [sandro      ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 17:46:27] [SECURITY] [sandro      ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 17:46:32] [INFO    ] [sandro      ] - Sessao encerrada (Logout).
+[2026-05-10 17:46:38] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro
+[2026-05-10 17:46:48] [SECURITY] [sandro      ] - Login Completo (MFA) realizado com sucesso para: sandro
+[2026-05-10 17:46:50] [SECURITY] [sandro      ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 17:47:07] [SECURITY] [sandro      ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 17:47:26] [SECURITY] [sandro      ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 17:47:30] [SECURITY] [sandro      ] - ALERTA DE AUDITORIA: FALHA DE INTEGRIDADE: O selo do bloco #0 foi violado.
+[2026-05-10 18:04:43] [INFO    ] [ANONYMOUS   ] - Login Passo 1 (Senha) OK para: sandro
+[2026-05-10 18:04:58] [SECURITY] [sandro      ] - Login Completo (MFA) realizado com sucesso para: sandro

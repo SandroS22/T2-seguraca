@@ -4,9 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
-/**
- * Teste para validar a detecção de adulteração (tampering) nos arquivos de persistência.
- */
+
 public class IntegrityCheckTest {
     public static void main(String[] args) {
         try {
@@ -15,16 +13,16 @@ public class IntegrityCheckTest {
             String user = "charlie";
             String pass = "charlie-pass";
 
-            // 1. Cadastro
+            
             System.out.println("Cadastrando 'charlie'...");
             AuthService.register(user, pass);
 
-            // 2. Simular Adulteração no Disco
+            
             Path path = Paths.get("MiniBlockchain/data/users/user_charlie.json");
             String originalJson = new String(Files.readAllBytes(path));
             Map<String, String> map = JsonUtils.jsonToMap(originalJson);
             
-            // Modifica o blob cifrado (adulteração)
+            
             String blob = map.get("blob");
             char modifiedChar = blob.charAt(0) == '0' ? '1' : '0';
             String corruptedBlob = modifiedChar + blob.substring(1);
@@ -33,7 +31,7 @@ public class IntegrityCheckTest {
             System.out.println("Adulterando o arquivo 'user_charlie.json' no disco...");
             Files.write(path, JsonUtils.mapToJson(map).getBytes());
 
-            // 3. Tentar carregar e decifrar
+            
             System.out.println("Tentando autenticar 'charlie' com arquivo adulterado...");
             try {
                 UserStorage storage = StorageManager.loadUserStorage(user);

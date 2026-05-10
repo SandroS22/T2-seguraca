@@ -1,21 +1,19 @@
 import java.security.GeneralSecurityException;
 
-/**
- * Teste de Validação do Cálculo de Hash e Efeito Avalanche.
- */
+
 public class BlockHashTest {
     public static void main(String[] args) {
         try {
             System.out.println("--- Teste de Hash de Bloco (Atividade 3.2.1) ---");
 
-            // 1. Criar um bloco base
+            
             Block b1 = new Block("0", "1620567890", "aabbccddeeff", "112233445566", "0000", "admin", "N/A");
 
-            // 2. Calcular hash inicial
+            
             String hash1 = BlockchainService.calculateBlockHash(b1);
             System.out.println("Hash Original: " + hash1);
 
-            // 3. Testar Consistência (Mesmo bloco deve gerar mesmo hash)
+            
             String hash1_copy = BlockchainService.calculateBlockHash(b1);
             if (hash1.equals(hash1_copy)) {
                 System.out.println("[SUCESSO] Hash consistente para o mesmo conteudo.");
@@ -23,9 +21,9 @@ public class BlockHashTest {
                 System.out.println("[FALHA] Hash inconsistente!");
             }
 
-            // 4. Testar Efeito Avalanche (Mudança mínima = Hash totalmente diferente)
+            
             System.out.println("\nAlterando um unico caractere no DataEnc...");
-            Block b2 = new Block("0", "1620567890", "aabbccddeefF", "112233445566", "0000", "admin", "N/A"); // f -> F
+            Block b2 = new Block("0", "1620567890", "aabbccddeefF", "112233445566", "0000", "admin", "N/A"); 
             String hash2 = BlockchainService.calculateBlockHash(b2);
             
             System.out.println("Novo Hash:     " + hash2);
@@ -36,7 +34,7 @@ public class BlockHashTest {
                 System.out.println("[FALHA] O hash permaneceu o mesmo após alteração!");
             }
 
-            // 5. Testar alteração no Owner
+            
             System.out.println("\nAlterando o Owner de 'admin' para 'user1'...");
             b1.setOwner("user1");
             String hash3 = BlockchainService.calculateBlockHash(b1);

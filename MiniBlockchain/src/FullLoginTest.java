@@ -1,9 +1,7 @@
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-/**
- * Teste de Validação Completa do Fluxo de Login (MFA).
- */
+
 public class FullLoginTest {
     public static void main(String[] args) {
         try {
@@ -12,12 +10,12 @@ public class FullLoginTest {
             String user = "fulltester" + System.currentTimeMillis();
             String pass = "strong-pass-123";
 
-            // 1. Registro Inicial
+            
             ServerResponse regRes = MiniBlockchainServer.register(user, pass);
             String totpSecretHex = (String) regRes.getData();
             SecretKey totpKey = new SecretKeySpec(BlockchainUtils.fromHex(totpSecretHex), "HmacSHA256");
 
-            // 2. Cenário A: Sucesso (Senha -> TOTP)
+            
             System.out.println("\n[Cenario A] Testando login de sucesso...");
             MiniBlockchainServer.loginStep1(user, pass);
             String validCode = TotpService.calculateTOTP(totpKey, TotpService.getCurrentTimeStep());
@@ -26,9 +24,9 @@ public class FullLoginTest {
             if (resA.isSuccess() && MiniBlockchainServer.isAuthenticated()) {
                 System.out.println("[OK] Login completo realizado com sucesso.");
             }
-            MiniBlockchainServer.logout(); // Reset
+            MiniBlockchainServer.logout(); 
 
-            // 3. Cenário B: Pular Passo 1
+            
             System.out.println("\n[Cenario B] Tentando enviar TOTP sem ter enviado a senha...");
             ServerResponse resB = MiniBlockchainServer.loginStep2("000000");
             System.out.println("Resultado: " + resB.getMessage());
@@ -36,7 +34,7 @@ public class FullLoginTest {
                 System.out.println("[OK] Sistema impediu o bypass do Passo 1.");
             }
 
-            // 4. Cenário C: Erro no TOTP e limpeza de estado
+            
             System.out.println("\n[Cenario C] Testando limpeza de estado em caso de erro no TOTP...");
             MiniBlockchainServer.loginStep1(user, pass);
             System.out.println("Enviando TOTP INCORRETO...");

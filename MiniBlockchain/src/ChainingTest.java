@@ -1,21 +1,19 @@
 import java.io.File;
 import java.util.List;
 
-/**
- * Teste de Validação do Encadeamento da Blockchain.
- */
+
 public class ChainingTest {
     public static void main(String[] args) {
         try {
             System.out.println("--- Teste de Encadeamento de Blockchain (Atividade 3.2.2) ---");
 
-            // 1. Limpar blockchain existente para teste limpo
+            
             File chainDir = new File("MiniBlockchain/data/blockchain");
             if (chainDir.exists()) {
                 for (File file : chainDir.listFiles()) file.delete();
             }
 
-            // 2. Criar Bloco 0 (Gênese)
+            
             System.out.println("\nCriando Bloco Gênese (0)...");
             Block b0 = new Block();
             b0.setOwner("system");
@@ -23,13 +21,13 @@ public class ChainingTest {
             b0.setDataEnc("GENESIS_DATA");
             b0.setIv("000000000000");
             
-            BlockchainService.linkNewBlock(b0); // Deve setar Index 0 e HashPrev zeros
+            BlockchainService.linkNewBlock(b0); 
             b0.setHash(BlockchainService.calculateBlockHash(b0));
             StorageManager.saveBlock(b0);
             
             System.out.println("B0 -> Index: " + b0.getIndex() + " | Hash: " + b0.getHash().substring(0, 10) + "...");
 
-            // 3. Criar Bloco 1 (Vinculado ao 0)
+            
             System.out.println("\nCriando Bloco 1...");
             Block b1 = new Block();
             b1.setOwner("user1");
@@ -37,7 +35,7 @@ public class ChainingTest {
             b1.setDataEnc("TX1_DATA");
             b1.setIv("111111111111");
             
-            BlockchainService.linkNewBlock(b1); // Deve setar Index 1 e HashPrev == B0.Hash
+            BlockchainService.linkNewBlock(b1); 
             b1.setHash(BlockchainService.calculateBlockHash(b1));
             StorageManager.saveBlock(b1);
             
@@ -47,7 +45,7 @@ public class ChainingTest {
                 System.out.println("[OK] Bloco 1 vinculado corretamente ao Bloco 0.");
             }
 
-            // 4. Criar Bloco 2 (Vinculado ao 1)
+            
             System.out.println("\nCriando Bloco 2...");
             Block b2 = new Block();
             b2.setOwner("user1");
@@ -65,7 +63,7 @@ public class ChainingTest {
                 System.out.println("[OK] Bloco 2 vinculado corretamente ao Bloco 1.");
             }
 
-            // 5. Validação de Persistência e Ordem
+            
             System.out.println("\nValidando leitura da cadeia do disco...");
             List<Block> chain = StorageManager.loadAllBlocks();
             System.out.println("Tamanho da cadeia lida: " + chain.size());

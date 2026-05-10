@@ -1,14 +1,11 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Representa o usuário como ele é gravado em disco (Cifrado).
- * Cumpre o requisito 6.vi: Apenas o salt é público.
- */
+
 public class UserStorage {
-    private String salt; // Hex (Público)
-    private String iv;   // Hex (IV para o blob)
-    private String blob; // Hex (JSON cifrado de User)
+    private String salt; 
+    private String iv;   
+    private String blob; 
 
     public UserStorage(String salt, String iv, String blob) {
         this.salt = salt;
